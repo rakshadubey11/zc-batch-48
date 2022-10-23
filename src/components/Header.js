@@ -39,7 +39,7 @@ function Header(props) {
       text: "Login Fail Try Again",
     });
   };
-  console.log(userLogin);
+  //console.log(userLogin);
   let logout = () => {
     Swal.fire({
       title: "Are you sure to logout?",
