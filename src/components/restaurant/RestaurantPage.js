@@ -50,7 +50,7 @@ function RestaurantPage() {
 
   let getRestaurantDetails = async () => {
     try {
-      let URL = "https://zc-backend-api-app.herokuapp.com/api/get-restaurant-details-by-id/" + id;
+      let URL = "https://zc-api-app.herokuapp.com/api/get-restaurant-details-by-id/" + id;
       let { data } = await axios.get(URL);
 
       if (data.status === true) {
@@ -64,7 +64,7 @@ function RestaurantPage() {
   };
   let getMenuItems = async () => {
     try {
-      let URL = `https://zc-backend-api-app.herokuapp.com/api/get-menu-item-list-by-restaurant-id/${id}`;
+      let URL = `https://zc-api-app.herokuapp.com/api/get-menu-item-list-by-restaurant-id/${id}`;
       let { data } = await axios.get(URL);
       if (data.status === true) {
 
@@ -119,7 +119,7 @@ function RestaurantPage() {
       amount: totalPrices,
     }
 
-    var { data } = await axios.post("https://zc-backend-api-app.herokuapp.com/api/payment/gen-order", serverData);
+    var { data } = await axios.post("https://zc-api-app.herokuapp.com/api/payment/gen-order", serverData);
 
     var order = data.order;
 
@@ -139,7 +139,7 @@ function RestaurantPage() {
           razorpay_signature: response.razorpay_signature,
         };
         var { data } = await axios.post(
-          "https://zc-backend-api-app.herokuapp.com/api/payment/verify",
+          "https://zc-api-app.herokuapp.com/api/payment/verify",
           sendData
         );
         if (data.status === true) {

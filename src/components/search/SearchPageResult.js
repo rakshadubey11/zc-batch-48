@@ -12,7 +12,7 @@ function SearchPageResult() {
 
   let getLocationList = async () => {
     try {
-      let response = await axios.get("https://zc-backend-api-app.herokuapp.com/api/get-location");
+      let response = await axios.get("https://zc-api-app.herokuapp.com/api/get-location");
       let data = response.data;
       if (data.status === true) {
         setLocationList([...data.result]);
@@ -26,7 +26,7 @@ function SearchPageResult() {
   };
 
   let filterOperation = async (filter) => {
-    let URL = "https://zc-backend-api-app.herokuapp.com/api/filter";
+    let URL = "https://zc-api-app.herokuapp.com/api/filter";
     try {
       let { data } = await axios.post(URL, filter);
       if (data.status === true) {
