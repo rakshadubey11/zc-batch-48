@@ -26,7 +26,7 @@ function SearchPageResult() {
   };
 
   let filterOperation = async (filter) => {
-    let URL = "https://zc-backend-api-app.herokuapp.com//api/filter";
+    let URL = "https://zc-backend-api-app.herokuapp.com/api/filter";
     try {
       let { data } = await axios.post(URL, filter);
       if (data.status === true) {
